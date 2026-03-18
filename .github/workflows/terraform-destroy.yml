@@ -1,14 +1,7 @@
-name: Terraform CI
+name: Terraform Destroy
 
 on:
-  push:
-    paths:
-      - "**/*.tf"
-      - "**/*.tfvars"
-  pull_request:
-    paths:
-      - "**/*.tf"
-      - "**/*.tfvars"
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -20,8 +13,9 @@ env:
   TF_VAR_db_password: ${{ secrets.TF_VAR_db_password }}
 
 jobs:
-  terraform:
+  destroy:
     runs-on: ubuntu-latest
+    environment: production
 
     steps:
       - uses: actions/checkout@v4
@@ -45,6 +39,5 @@ jobs:
             -backend-config="dynamodb_table=${{ vars.TF_LOCK_TABLE }}" \
             -backend-config="encrypt=true"
 
-      - run: terraform fmt -check
-      - run: terraform validate
-      - run: terraform plan -input=false -no-color
+      - name: Terraform Destroy
+        run: terraform destroy -auto-approve
