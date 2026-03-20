@@ -37,7 +37,7 @@ resource "aws_db_instance" "showgo_db" {
 
   db_name  = "postgres"
   username = "postgres"
-  password = "Postgres@123"
+  password = "Admin123!"
 
   vpc_security_group_ids = [aws_security_group.rds_sg.id]
 
