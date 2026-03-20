@@ -36,8 +36,8 @@ resource "aws_db_instance" "showgo_db" {
   allocated_storage = 20
 
   db_name  = "postgres"
-  username = "postgres"
-  password = "Admin123!"
+  username = var.db_username
+  password = var.db_password
 
   vpc_security_group_ids = [aws_security_group.rds_sg.id]
 
