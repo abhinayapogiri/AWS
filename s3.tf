@@ -3,7 +3,7 @@
 ########################
 
 resource "aws_s3_bucket" "showgo_bucket" {
-  bucket = "image-showgo"   # 🔥 MUST be unique
+  bucket = "showgo-image"   # 🔥 MUST be unique
 
   tags = {
     Name = "showgo-image"
@@ -42,7 +42,7 @@ resource "aws_s3_bucket_policy" "public_read" {
         Effect = "Allow"
         Principal = "*"
         Action = ["s3:GetObject"]
-        Resource = "arn:aws:s3:::image-showgo/*"
+        Resource = "arn:aws:s3:::showgo-image/*"
       }
     ]
   })
