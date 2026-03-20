@@ -3,7 +3,7 @@
 ########################
 
 resource "aws_s3_bucket" "showgo_bucket" {
-  bucket = "showgo-image"   # 🔥 MUST be unique
+  bucket = "showgo-image" # 🔥 MUST be unique
 
   tags = {
     Name = "showgo-image"
@@ -38,11 +38,11 @@ resource "aws_s3_bucket_policy" "public_read" {
     Version = "2012-10-17"
     Statement = [
       {
-        Sid = "PublicReadOnly"
-        Effect = "Allow"
+        Sid       = "PublicReadOnly"
+        Effect    = "Allow"
         Principal = "*"
-        Action = ["s3:GetObject"]
-        Resource = "arn:aws:s3:::showgo-image/*"
+        Action    = ["s3:GetObject"]
+        Resource  = "arn:aws:s3:::showgo-image/*"
       }
     ]
   })
