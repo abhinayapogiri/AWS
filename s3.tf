@@ -3,7 +3,7 @@
 ########################
 
 resource "aws_s3_bucket" "showgo_bucket" {
-  bucket = "showgo-image" # 🔥 MUST be unique
+  bucket = "showgo-image"
 
   tags = {
     Name = "showgo-image"
