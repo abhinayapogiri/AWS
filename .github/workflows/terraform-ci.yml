@@ -5,10 +5,13 @@ on:
     paths:
       - "**/*.tf"
       - "**/*.tfvars"
+      - ".github/workflows/*.yml"
+
   pull_request:
     paths:
       - "**/*.tf"
       - "**/*.tfvars"
+      - ".github/workflows/*.yml"
 
 permissions:
   contents: read

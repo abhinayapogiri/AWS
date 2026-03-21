@@ -8,8 +8,8 @@ on:
     paths:
       - "*.tf"
       - "**/*.tf"
-      - ".github/workflows/terraform-apply.yml"
-
+      - ".github/workflows/*.yml"
+      
 permissions:
   contents: read
 
