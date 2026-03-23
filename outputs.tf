@@ -7,5 +7,5 @@ output "rds_endpoint" {
 }
 
 output "s3_bucket_name" {
-  value = aws_s3_bucket.showgo_bucket.bucket
+  value = data.aws_s3_bucket.existing_bucket.bucket
 }
