@@ -9,9 +9,7 @@ on:
       - "*.tf"
       - "**/*.tf"
       - ".github/workflows/*.yml"
-concurrency:
-  group: terraform
-  cancel-in-progress: true
+
       
 permissions:
   contents: read

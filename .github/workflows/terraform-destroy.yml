@@ -2,9 +2,6 @@ name: Terraform Destroy
 
 on:
   workflow_dispatch:
-concurrency:
-  group: terraform
-  cancel-in-progress: true
 
 permissions:
   contents: read
