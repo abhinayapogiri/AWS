@@ -8,3 +8,7 @@ variable "db_password" {
   type        = string
   sensitive   = true
 }
+variable "existing_s3_bucket" {
+  description = "Existing S3 bucket name"
+  type        = string
+}
